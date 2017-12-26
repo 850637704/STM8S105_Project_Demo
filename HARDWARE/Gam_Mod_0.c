@@ -50,7 +50,7 @@ void Gam_Mod_0(uint8_t Key_Val)
 		  	if(Gam_Vol_Val)  Yx5p_Speak(0x18);
 			if((( temp >>(NUM[0x00]+1) )&0x01)&&((Gam_Key_Tmp1&0x01) == 0x00))
 			{
-				Gam_Key_Tmp1 |= 0x01;												// 锁住按键
+				Gam_Key_Tmp1 |= 0x01;											// 锁住按键
 				Gam_Sco_Val++;
 				GPIO_WriteHigh(GPIOB,(GPIO_Pin_TypeDef)~Key_Val);
 			}

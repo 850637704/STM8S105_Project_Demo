@@ -24,6 +24,7 @@ void Talk(uint8_t Sud,uint8_t Key_Val)
 				case 0xee:
 				case 0xfa:
 					Yx5p_Speak(0x10);break;
+				default:Yx5p_Speak(0x10);break;
 			}
 		}break;
 		case 0x04:Yx5p_Speak(0x11);break;
@@ -40,6 +41,7 @@ void Talk(uint8_t Sud,uint8_t Key_Val)
 				case 0xee:
 				case 0xfa:
 					Yx5p_Speak(0x13);break;
+				default:Yx5p_Speak(0x13);break;
 			}
 		}break;
 		default:{};break;
@@ -57,7 +59,7 @@ void Gam_Mod_1(uint8_t Key_Val)
 				Mod1_Sco_Val ++;
 				if(Mod1_Sco_Val==1000)
 					Mod1_Sco_Val = 0;
-				Talk(Gam_Sud_Val,Key_Val);
+//				Talk(Gam_Sud_Val,Key_Val);
 				Gam_Mod_tmp0 &= 0xfc;
 				GPIO_WriteHigh(GPIOB,GPIO_PIN_1);
 			}
@@ -69,7 +71,7 @@ void Gam_Mod_1(uint8_t Key_Val)
 				Mod1_Sco_Val ++;
 				if(Mod1_Sco_Val==1000)
 					Mod1_Sco_Val = 0;
-				Talk(Gam_Sud_Val,Key_Val);
+//				Talk(Gam_Sud_Val,Key_Val);
 				Gam_Mod_tmp0 &= 0xfa;
 				GPIO_WriteHigh(GPIOB,GPIO_PIN_2);
 			}
@@ -81,7 +83,7 @@ void Gam_Mod_1(uint8_t Key_Val)
 				Mod1_Sco_Val ++;
 				if(Mod1_Sco_Val==1000)
 					Mod1_Sco_Val = 0;
-				Talk(Gam_Sud_Val,Key_Val);
+//				Talk(Gam_Sud_Val,Key_Val);
 				Gam_Mod_tmp0 &= 0xf6;
 				GPIO_WriteHigh(GPIOB,GPIO_PIN_3);
 			}
@@ -93,7 +95,7 @@ void Gam_Mod_1(uint8_t Key_Val)
 				Mod1_Sco_Val ++;
 				if(Mod1_Sco_Val==1000)
 					Mod1_Sco_Val = 0;
-				Talk(Gam_Sud_Val,Key_Val);
+//				Talk(Gam_Sud_Val,Key_Val);
 				Gam_Mod_tmp0 &= 0xee;
 				GPIO_WriteHigh(GPIOB,GPIO_PIN_4);
 			}
@@ -105,7 +107,7 @@ void Gam_Mod_1(uint8_t Key_Val)
 				Mod1_Sco_Val ++;
 				if(Mod1_Sco_Val==1000)
 					Mod1_Sco_Val = 0;
-				Talk(Gam_Sud_Val,Key_Val);
+//				Talk(Gam_Sud_Val,Key_Val);
 				Gam_Mod_tmp0 &= 0xde;
 				GPIO_WriteHigh(GPIOB,GPIO_PIN_5);
 			}
@@ -117,7 +119,7 @@ void Gam_Mod_1(uint8_t Key_Val)
 				Mod1_Sco_Val ++;
 				if(Mod1_Sco_Val==1000)
 					Mod1_Sco_Val = 0;
-				Talk(Gam_Sud_Val,Key_Val);
+//				Talk(Gam_Sud_Val,Key_Val);
 				Gam_Mod_tmp0 &= 0xbe;
 				GPIO_WriteHigh(GPIOB,GPIO_PIN_6);
 			}
@@ -129,10 +131,14 @@ void Gam_Mod_1(uint8_t Key_Val)
 				Mod1_Sco_Val ++;
 				if(Mod1_Sco_Val==1000)
 					Mod1_Sco_Val = 0;
-				Talk(Gam_Sud_Val,Key_Val);
+//				Talk(Gam_Sud_Val,Key_Val);
 				Gam_Mod_tmp0 &= 0x7e;
 				GPIO_WriteHigh(GPIOB,GPIO_PIN_7);
 			}
+		}
+		if(Key_Val != 0xfe)														// œÏ”¶“Ù–ß
+		{
+			Talk(Gam_Sud_Val,Key_Val);
 		}
 //		switch(Key_Val)
 //		{
